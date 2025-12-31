@@ -1,0 +1,356 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   CSS RESETS & BASE STYLES
+   ============================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* ============================================
+   CSS VARIABLES - DESIGN SYSTEM
+   ============================================ */
+
+:root {
+  /* Background colors */
+  --background: #F5F8FA;
+  --background-secondary: #FFFFFF;
+  --foreground: #2C3E50;
+  --foreground-secondary: #5A6C7D;
+  
+  /* Primary brand colors */
+  --primary: #0D6EFD;
+  --primary-hover: #0B5ED7;
+  --primary-light: #E7F1FF;
+  
+  /* Accent colors */
+  --accent-purple: #9B7EF7;
+  --accent-purple-light: #E8DFFE;
+  --accent-blue: #5DADE2;
+  --accent-green: #2ECC71;
+  --accent-orange: #F39C12;
+  
+  /* Neutral grays */
+  --gray-50: #F8F9FA;
+  --gray-100: #E9ECEF;
+  --gray-200: #DEE2E6;
+  --gray-300: #CED4DA;
+  --gray-400: #ADB5BD;
+  --gray-500: #6C757D;
+  --gray-600: #495057;
+  --gray-700: #343A40;
+  --gray-800: #212529;
+  --gray-900: #1A1D20;
+  
+  /* Status colors */
+  --success: #28A745;
+  --success-light: #D4EDDA;
+  --warning: #FFC107;
+  --warning-light: #FFF3CD;
+  --danger: #DC3545;
+  --danger-light: #F8D7DA;
+  --info: #17A2B8;
+  --info-light: #D1ECF1;
+  
+  /* Border colors */
+  --border: #E0E6ED;
+  --border-hover: #C5CFD9;
+  
+  /* Shadow */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  
+  /* Border radius */
+  --radius-sm: 0.375rem;
+  --radius: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  
+  /* Transitions */
+  --transition: all 0.2s ease-in-out;
+  --transition-fast: all 0.15s ease-in-out;
+  --transition-slow: all 0.3s ease-in-out;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0F1419;
+    --background-secondary: #1A1F26;
+    --foreground: #E4E6EB;
+    --foreground-secondary: #B0B3B8;
+    
+    --primary: #2B7FFF;
+    --primary-hover: #5294FF;
+    --primary-light: #1A2F4A;
+    
+    --accent-purple: #A78BFA;
+    --accent-purple-light: #2D2548;
+    --accent-blue: #60A5FA;
+    --accent-green: #34D399;
+    --accent-orange: #FBBF24;
+    
+    --gray-50: #2C3137;
+    --gray-100: #363A40;
+    --gray-200: #40454C;
+    --gray-300: #4E5359;
+    --gray-400: #6C727A;
+    --gray-500: #9CA3AF;
+    --gray-600: #D1D5DB;
+    --gray-700: #E5E7EB;
+    --gray-800: #F3F4F6;
+    --gray-900: #F9FAFB;
+    
+    --success: #10B981;
+    --success-light: #1A3A2E;
+    --warning: #F59E0B;
+    --warning-light: #3A2E1A;
+    --danger: #EF4444;
+    --danger-light: #3A1A1A;
+    --info: #06B6D4;
+    --info-light: #1A3033;
+    
+    --border: #2C3137;
+    --border-hover: #40454C;
+    
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4), 0 1px 2px -1px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -4px rgba(0, 0, 0, 0.4);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+  }
+}
+
+/* ============================================
+   BASE HTML ELEMENTS
+   ============================================ */
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--foreground);
+}
+
+h1 {
+  font-size: 2.25rem;
+}
+
+h2 {
+  font-size: 1.875rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1.125rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+a:hover {
+  color: var(--primary-hover);
+}
+
+/* ============================================
+   FORM ELEMENTS
+   ============================================ */
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* ============================================
+   UTILITY RESETS
+   ============================================ */
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* ============================================
+   SCROLLBAR STYLING (Optional)
+   ============================================ */
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--gray-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gray-400);
+  border-radius: var(--radius);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gray-500);
+}
+
+/* ============================================
+   CUSTOM UTILITY CLASSES
+   ============================================ */
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .transition-default {
+    transition: var(--transition);
+  }
+  
+  .transition-fast {
+    transition: var(--transition-fast);
+  }
+  
+  .transition-slow {
+    transition: var(--transition-slow);
+  }
+}
+
+/* ============================================
+   CUSTOM COMPONENT CLASSES
+   ============================================ */
+
+@layer components {
+  .card {
+    background: var(--background-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .btn-primary {
+    background: var(--primary);
+    color: white;
+    padding: 0.625rem 1.25rem;
+    border-radius: var(--radius);
+    font-weight: 500;
+    transition: var(--transition-fast);
+  }
+  
+  .btn-primary:hover {
+    background: var(--primary-hover);
+    box-shadow: var(--shadow-md);
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 0.625rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--background-secondary);
+    color: var(--foreground);
+    transition: var(--transition-fast);
+  }
+  
+  .input-field:hover {
+    border-color: var(--border-hover);
+  }
+  
+  .input-field:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px var(--primary-light);
+  }
+}
