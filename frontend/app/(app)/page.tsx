@@ -1,14 +1,21 @@
-import { dashboardStats } from "@/data/dashboard";
-import StatCard from "@/components/dashboard/StatCard";
+import RevenueSummary from "@/components/dashboard/RevenueSummary";
+import ClientActivityCard from "@/components/dashboard/ClientActivityCard";
+import PortfolioSection from "@/components/dashboard/PortfolioSection";
 
 export default function DashboardPage() {
   return (
     <div className="space-y-6">
-      <h1 className="text-2xl font-bold">Dashboard Overview</h1>
-      <div className="grid grid-cols-4 gap-4">
-        {dashboardStats.map(stat => (
-          <StatCard key={stat.label} {...stat} />
-        ))}
+      <h1 className="text-[22px] font-semibold text-[#023E7A]">
+        Dashboard Overview
+      </h1>
+
+      <div className="flex gap-6">
+        <div className="flex-1 space-y-6">
+          <RevenueSummary />
+          <PortfolioSection />
+        </div>
+
+        <ClientActivityCard />
       </div>
     </div>
   );

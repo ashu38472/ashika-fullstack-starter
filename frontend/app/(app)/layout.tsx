@@ -9,29 +9,29 @@ export default function AppLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="h-screen w-screen bg-white overflow-hidden">
+    <div className="h-screen w-screen bg-white flex flex-col">
       {/* Topbar */}
       <Topbar />
 
-      {/* Shell */}
-      <div className="flex h-[calc(100vh-64px)]">
+      {/* Body */}
+      <div className="flex flex-1 overflow-hidden">
         {/* Sidebar */}
         <Sidebar />
 
-        {/* Content Wrapper (important layer) */}
+        {/* Content Wrapper */}
         <div className="flex-1 bg-white">
-          {/* Actual Content Surface */}
+          {/* Scroll Container */}
           <main
             className="
               h-full
+              overflow-y-auto
               bg-[#EEF7FF]
               rounded-tl-[30px]
               shadow-sm
-              overflow-auto
-              p-6
             "
           >
-            <div className="max-w-[1600px] mx-auto">
+            {/* STANDARD PAGE SPACING (GLOBAL) */}
+            <div className="max-w-[1600px] mx-auto px-6 py-6">
               {children}
             </div>
           </main>
