@@ -1,6 +1,6 @@
 export default function ClientActivityCard() {
   return (
-    <div className="bg-white rounded-2xl p-6 space-y-4 w-[320px]">
+    <div className="bg-white rounded-2xl p-6 space-y-4 w-[420px]">
       <h2 className="text-lg font-semibold text-[#023E7A]">
         Client Activity
       </h2>

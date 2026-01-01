@@ -1,6 +1,6 @@
 export default function PortfolioSection() {
   return (
-    <div className="bg-white rounded-2xl p-6 h-[360px]">
+    <div className="bg-white rounded-2xl p-6 h-[500px]">
       <p className="text-2xl font-bold text-[#41414E]">
         ₹10,00,00,00
       </p>
@@ -13,7 +13,7 @@ export default function PortfolioSection() {
       </p>
 
       {/* Chart placeholder */}
-      <div className="mt-6 h-[220px] rounded-xl bg-[#EEF7FF] flex items-center justify-center text-sm text-[#6C757D]">
+      <div className="mt-6 h-[360px] rounded-xl bg-[#EEF7FF] flex items-center justify-center text-sm text-[#6C757D]">
         Chart will go here
       </div>
     </div>

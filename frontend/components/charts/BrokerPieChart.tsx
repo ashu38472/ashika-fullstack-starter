@@ -1,13 +1,16 @@
 "use client";
 
 import { brokerDistribution } from "@/data/chartData";
-import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
+import { PieChart, Pie, Cell, ResponsiveContainer, Label } from "recharts";
 
 export default function BrokerPieChart() {
   return (
-    <div className="w-[380px]">
-      {/* Donut Chart */}
-      <div className="w-full h-64 flex justify-center">
+    <div className="flex flex-col items-center w-full">
+      {/* Donut Chart with Center Label */}
+      <div
+        className="relative flex justify-center"
+        style={{ width: "300px", height: "300px" }}
+      >
         <ResponsiveContainer width="100%" height="100%">
           <PieChart>
             <Pie
@@ -15,27 +18,42 @@ export default function BrokerPieChart() {
               cx="50%"
               cy="50%"
               innerRadius={70}
-              outerRadius={100}
-              paddingAngle={3}
+              outerRadius={110}
+              paddingAngle={2}
               dataKey="value"
+              startAngle={90}
+              endAngle={450}
+              label={({ value }) => `${value}%`} // Shows percentage on segments
+              labelLine={false}
             >
               {brokerDistribution.map((entry, index) => (
-                <Cell key={index} fill={entry.color} />
+                <Cell key={`cell-${index}`} fill={entry.color} />
               ))}
+              <Label
+                value="Value/Unit"
+                position="center"
+                style={{
+                  fontSize: "20px",
+                  fontWeight: "600",
+                  fill: "#023E7A",
+                }}
+              />
             </Pie>
           </PieChart>
         </ResponsiveContainer>
       </div>
 
-      {/* Legend */}
-      <div className="grid grid-cols-3 gap-y-2 mt-4 text-sm">
+      {/* Legend - 2 Column Grid */}
+      <div className="grid grid-cols-3 gap-x-8 gap-y-3 mt-6">
         {brokerDistribution.map((item) => (
-          <div key={item.name} className="flex items-center gap-2">
+          <div key={item.name} className="flex items-center gap-2.5">
             <span
-              className="h-3 w-3 rounded-full"
-              style={{ background: item.color }}
+              className="h-3 w-3 rounded-full flex-shrink-0"
+              style={{ backgroundColor: item.color }}
             />
-            <span className="text-[#023E7A]">{item.name}</span>
+            <span className="text-sm font-medium text-[#023E7A]">
+              {item.name}
+            </span>
           </div>
         ))}
       </div>

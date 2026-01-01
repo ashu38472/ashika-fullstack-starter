@@ -5,37 +5,38 @@ import BrokerPieChart from "../charts/BrokerPieChart";
 import MFSIPPieChart from "../charts/MFSIPPieChart";
 
 export default function PieChartComponent() {
-  const [activeTab, setActiveTab] = useState<"broker" | "mf">("broker");
+  const [activeChart, setActiveChart] = useState("broker");
 
   return (
-    <div className="bg-white rounded-2xl p-6 w-[420px]">
-      {/* Toggle Buttons */}
-      <div className="flex bg-[#F5F7FB] rounded-lg overflow-hidden w-fit mb-4">
+    <div className="w-[420px] h-[500px] mx-auto p-6 bg-white rounded-lg">
+      {/* Button Group */}
+      <div className="flex justify-between px-8 mb-8">
         <button
-          onClick={() => setActiveTab("broker")}
-          className={`px-6 py-2 text-sm rounded-lg ${
-            activeTab === "broker"
-              ? "bg-[#0063F5] text-white"
-              : "text-[#023E7A]"
+          onClick={() => setActiveChart("broker")}
+          className={`px-8 py-2 rounded-lg font-medium transition-all ${
+            activeChart === "broker"
+              ? "bg-blue-600 text-white shadow-md"
+              : "bg-white text-gray-700 border border-gray-300 hover:bg-gray-50"
           }`}
         >
           Broker
         </button>
-
         <button
-          onClick={() => setActiveTab("mf")}
-          className={`px-6 py-2 text-sm rounded-lg ${
-            activeTab === "mf"
-              ? "bg-[#0063F5] text-white"
-              : "text-[#023E7A]"
+          onClick={() => setActiveChart("mfsip")}
+          className={`px-8 py-2 rounded-lg font-medium transition-all ${
+            activeChart === "mfsip"
+              ? "bg-blue-600 text-white shadow-md"
+              : "bg-white text-gray-700 border border-gray-300 hover:bg-gray-50"
           }`}
         >
           M/F & SIP
         </button>
       </div>
 
-      {/* Render Correct Chart */}
-      {activeTab === "broker" ? <BrokerPieChart /> : <MFSIPPieChart />}
+      {/* Chart Display */}
+      <div className="flex justify-center">
+        {activeChart === "broker" ? <BrokerPieChart /> : <MFSIPPieChart />}
+      </div>
     </div>
   );
 }
