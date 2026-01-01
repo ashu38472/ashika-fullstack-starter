@@ -1,6 +1,6 @@
 package com.backend.ashikadb.controller;
 
-import com.backend.ashikadb.dto.AuthResponse;
+
 import com.backend.ashikadb.dto.LoginRequest;
 import com.backend.ashikadb.dto.RegisterRequest;
 import com.backend.ashikadb.dto.UserResponseDTO;
@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api/auth")
 @RequiredArgsConstructor
+@CrossOrigin("*")
 public class AuthController {
 
     private final AuthService authService;

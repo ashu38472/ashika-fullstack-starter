@@ -2,9 +2,9 @@ spring:
   application:
     name: ashika
   datasource:
-    url: jdbc:postgresql://localhost:5432/anapexa_db
+    url: jdbc:postgresql://localhost:5432/ashika_db
     username: postgres
-    password: admin
+    password: postgres
   jpa:
     hibernate:
       ddl-auto: update
