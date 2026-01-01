@@ -30,22 +30,22 @@ const menuItems: MenuItem[] = [
   },
   {
     name: "Client Management",
-    href: "/clients",
+    href: "#",
     icon: Users,
   },
   {
     name: "Revenue Analysis",
-    href: "/revenue",
+    href: "#",
     icon: BarChart3,
   },
   {
     name: "Client Activity",
-    href: "/activity",
+    href: "#",
     icon: TrendingUp,
   },
   {
     name: "Details",
-    href: "/details",
+    href: "#",
     icon: FileText,
   },
 ];

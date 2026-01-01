@@ -1,6 +1,7 @@
 import RevenueSummary from "@/components/dashboard/RevenueSummary";
 import ClientActivityCard from "@/components/dashboard/ClientActivityCard";
 import PortfolioSection from "@/components/dashboard/PortfolioSection";
+import PieChartComponent from "@/components/dashboard/PieChartComponent";
 
 export default function DashboardPage() {
   return (
@@ -28,7 +29,7 @@ export default function DashboardPage() {
           <PortfolioSection />
         </div>
 
-        {/* <PieChartComponent /> */}
+        <PieChartComponent />
       </div>
     </div>
   );
