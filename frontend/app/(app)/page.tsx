@@ -9,13 +9,26 @@ export default function DashboardPage() {
         Dashboard Overview
       </h1>
 
-      <div className="flex gap-6">
-        <div className="flex-1 space-y-6">
+      {/* ROW 1 */}
+      <div className="flex gap-6 items-start">
+        <div className="flex-1">
           <RevenueSummary />
-          <PortfolioSection />
         </div>
 
         <ClientActivityCard />
+      </div>
+
+      {/* ROW 2 */}
+      <h2 className="text-[22px] font-semibold text-[#023E7A]">
+        Portfolio Value
+      </h2>
+
+      <div className="flex gap-6 items-start">
+        <div className="flex-1">
+          <PortfolioSection />
+        </div>
+
+        {/* <PieChartComponent /> */}
       </div>
     </div>
   );

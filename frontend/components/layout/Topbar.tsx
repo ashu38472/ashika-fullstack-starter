@@ -46,7 +46,7 @@ export default function Topbar() {
 
           {/* User Info */}
           <Image
-            src="https://api.dicebear.com/7.x/avataaars/svg?seed=Chirag"
+            src="/profile.png"
             alt="User Avatar"
             width={42}
             height={42}

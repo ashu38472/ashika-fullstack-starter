@@ -1,10 +1,6 @@
 export default function PortfolioSection() {
   return (
     <div className="bg-white rounded-2xl p-6 h-[360px]">
-      <h2 className="text-lg font-semibold text-[#023E7A] mb-4">
-        Portfolio Value
-      </h2>
-
       <p className="text-2xl font-bold text-[#41414E]">
         ₹10,00,00,00
       </p>
