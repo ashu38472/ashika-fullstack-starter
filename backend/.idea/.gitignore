@@ -1,5 +1,29 @@
-# Default ignored files
+### IntelliJ IDEA ###
+.idea/
+*.iml
+*.iws
+out/
+
+# JetBrains
 /shelf/
 /workspace.xml
-# Environment-dependent path to Maven home directory
 /mavenHomeManager.xml
+
+### Maven ###
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+### Logs ###
+logs/
+*.log
+
+### OS / Editor ###
+.DS_Store
+Thumbs.db
+
+### Environment / Credentials (Optional but Recommended) ###
+.env
+*.yaml.local
+application-local.yaml
+application-dev.yaml
+application.yaml
