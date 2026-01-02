@@ -8,9 +8,9 @@ import React, {
   ReactNode,
 } from "react";
 
-const AUTH_TOKEN_KEY = "auth_token";
-const AUTH_USER_KEY = "auth_user";
-const REFRESH_TOKEN_KEY = "refresh_token";
+const AUTH_TOKEN_KEY = "ashika_auth_token";
+const AUTH_USER_KEY = "ashika_auth_user";
+const REFRESH_TOKEN_KEY = "ashika_refresh_token";
 
 interface AuthUser {
   id: string;
