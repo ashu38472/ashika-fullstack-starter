@@ -67,6 +67,18 @@ npm run dev
 
 Open **http://localhost:3000** in your browser to see the app.
 
+### 🔐 Demo Login Credentials
+
+The backend automatically seeds a demo user on startup (if no users exist).
+
+Use the following credentials to log in:
+
+```credentials
+Email:    demo@example.com
+Password: Password@123
+```
+> These credentials are intended for local development and demo purposes only.
+
 ---
 
 ## 🧩 Frontend Tech Stack
