@@ -127,11 +127,4 @@ http://localhost:9595
 
 ---
 
-## 🚀 Deployment
-
-- Frontend deploy using **Vercel**
-- Backend deploy on server / cloud of your choice
-
----
-
 Happy building! 🎯
