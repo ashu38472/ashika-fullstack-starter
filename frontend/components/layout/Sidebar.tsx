@@ -12,6 +12,8 @@ import {
   ChevronLeft,
   ChevronRight,
   ChevronDown,
+  ListTodo,
+  NotebookTabs,
 } from "lucide-react";
 import RightCorvedShape from "../sidebar/RightCurvedShape";
 
@@ -35,7 +37,7 @@ const menuItems: MenuItem[] = [
   },
   {
     name: "Revenue Analysis",
-    href: "#",
+    href: "/revenue",
     icon: BarChart3,
   },
   {
@@ -45,8 +47,18 @@ const menuItems: MenuItem[] = [
   },
   {
     name: "Details",
-    href: "#",
+    href: "/details",
     icon: FileText,
+  },
+  {
+    name: "DO&Don't",
+    href: "/do-dont",
+    icon: ListTodo,
+  },
+  {
+    name: "Change Format",
+    href: "/change-format",
+    icon: NotebookTabs,
   },
 ];
 
@@ -94,11 +106,11 @@ export default function Sidebar() {
                 href={item.href}
                 className={`
                   relative flex items-center gap-3 px-4 py-3 transition-all duration-200
-                  rounded-l-lg hover:rounded-r-lg
+                  rounded-l-lg
                   ${
                     isActive
                       ? "bg-[#EEF7FF] text-[#41414E]"
-                      : "text-[#6C757D] hover:bg-[#F5F9FF] hover:text-[#0063F5]"
+                      : "text-[#6C757D] hover:bg-[#F5F9FF] hover:rounded-r-lg hover:text-[#0063F5]"
                   }
                   ${isCollapsed ? "justify-center" : ""}
                 `}
