@@ -1,15 +1,19 @@
-# API Specification
+# API Documentation
 
-## Auth
-POST /api/auth/login
+This document describes the available API endpoints for the Ashika Fullstack backend.
 
-## Dashboard
-GET /api/dashboard/summary
+All APIs can be tested using Swagger UI:
 
-## Ledger
-GET /api/ledger?type=MUTUAL_FUND
-GET /api/ledger?type=BROKING
+http://localhost:9595/swagger-ui/index.html
 
-## Clients
-GET /api/clients
-GET /api/clients/{id}
+---
+
+## Authentication
+
+### Register
+**POST** `/api/auth/register`
+
+### Login
+**POST** `/api/auth/login`
+
+---
